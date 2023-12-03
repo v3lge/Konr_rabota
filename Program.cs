@@ -6,13 +6,22 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
+
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        System.Console.Write(array[i] + " ");
+    }
+}
+
 string[] GetThreeOrLessSymbols(string[] arr)
 {string[] B = new string[4];
     for (int i = 0; i < arr.Length; i++)
     {
-        if (i.Length <= 3)
+        if (arr[i].Length <= 3)
         {
-            B[i] = i;
+            B[i] = arr[i];
         }
         else
         {
@@ -23,9 +32,12 @@ string[] GetThreeOrLessSymbols(string[] arr)
 }
 
 
-
-string [] A = new string[4] {"Работа", "Контроль", "Гит", "Да", "Net"};
-System.Console.WriteLine(GetThreeOrLessSymbols(A));
+System.Console.Write("Было:  ");
+string[] A = new string[4] {"Работа", "Контроль", "Гит", "Да"};
+PrintArray(A);
+System.Console.WriteLine();
+System.Console.Write("Стало:  ");
+PrintArray(GetThreeOrLessSymbols(A));
 
 
 
